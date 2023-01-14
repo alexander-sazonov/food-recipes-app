@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/popularRecipesFragment">
+
+    <fragment
+        android:id="@+id/popularRecipesFragment"
+        android:name="com.alexandersazonov.foodrecipesapp.ui.popular.PopularRecipesFragment"
+        android:label="fragment_popular_recipes"
+        tools:layout="@layout/fragment_popular_recipes" >
+        <action
+            android:id="@+id/action_popularRecipesFragment_to_recipeDetailFragment"
+            app:destination="@id/recipeDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recipeDetailFragment"
+        android:name="com.alexandersazonov.foodrecipesapp.ui.detail.RecipeDetailFragment"
+        android:label="fragment_recipe_detail"
+        tools:layout="@layout/fragment_recipe_detail" >
+        <argument
+            android:name="recipe_id"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoritesFragment"
+        android:name="com.alexandersazonov.foodrecipesapp.ui.favorites.FavoritesFragment"
+        android:label="fragment_favorites"
+        tools:layout="@layout/fragment_favorites" >
+        <action
+            android:id="@+id/action_favoritesFragment_to_recipeDetailFragment"
+            app:destination="@id/recipeDetailFragment" />
+    </fragment>
+</navigation>
